@@ -10,7 +10,6 @@ namespace AgendaFrameworkApp
         {
             this.agendaController = agendaController;
         }
-
         public bool ExecuteTask(string showDate, string[] optionCommands)
         {
             foreach (string optionCommand in optionCommands)
@@ -27,7 +26,6 @@ namespace AgendaFrameworkApp
             else return false;
             return true;
         }
-
         private void ShowEntries(string entryDate)
         {
             foreach (AgendaEntry entry in AgendaTools.FilterByDate(entryDate, agendaController.GetAgenda()))

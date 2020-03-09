@@ -14,7 +14,7 @@ namespace AgendaFrameworkApp
                 new Dictionary<string, ITaskOrder>()
                 {
                     {"EXIT", new InterpreterOfEscape()},
-                    {"ADD ", new InterpreterOfAdd(agendaController)},
+                    {"ADD ", new ActionerOfAdd(agendaController)},
                     {"SHOW", new InterpreterOfShow(agendaController)},
                     {"REMOVE ", new ActionerOfRemove(agendaController)},
                     {"SEARCH ", new InterpreterOfSearch(agendaController) }
@@ -58,6 +58,15 @@ namespace AgendaFrameworkApp
         public AgendaController GetAgendaController()
         {
             return agendaController;
+        }
+        private Dictionary<int,ITaskOrder> GetCustomAddCommands()
+        {
+            return new Dictionary<int, ITaskOrder>()
+            {
+                {1,new AdderOneEntry(agendaController)},
+                {2,new AdderTwoEntries(agendaController)},
+                {3,new AdderThreeEntries(agendaController)}
+            };
         }
     }
 }
