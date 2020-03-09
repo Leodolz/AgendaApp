@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AgendaFrameworkApp;
+using AgendaManager;
 
 namespace AgendaWinFormsApp
 {
@@ -17,10 +17,11 @@ namespace AgendaWinFormsApp
         {
             this.agendaController = agendaController;
         }
-        public void ExecuteTask(string filteringOption)
+        public bool ExecuteTask(string filteringOption, string[] optionCommands =null)
         {
             IAgendaFilterer agendaFilterer = GetAgendaFilterer(agendaController);
             FormHome.AgendaToDisplay = agendaFilterer.GetFilteredAgenda(filteringOption);
+            return true;
         }
         private IAgendaFilterer GetAgendaFilterer(AgendaController agendaController)
         {

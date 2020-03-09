@@ -45,6 +45,10 @@ namespace AgendaManager
             }
             return agendaValues;
         }
+        public static AgendaController CreateAgendaController()
+        {
+            return new AgendaController();
+        }
 
     }
 }

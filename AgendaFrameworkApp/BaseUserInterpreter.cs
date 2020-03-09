@@ -1,13 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text.RegularExpressions;
-
+using AgendaManager;
 namespace AgendaFrameworkApp
 {
     class BaseUserInterpreter:IUserClient
     {
         public static Dictionary<string, ITaskOrder> AgendaValidCommands = new Dictionary<string,ITaskOrder>();
-        AgendaController agendaController = new AgendaController();
+        AgendaController agendaController = AgendaTools.CreateAgendaController();
         public BaseUserInterpreter()
         {
             AgendaValidCommands =
@@ -28,7 +28,7 @@ namespace AgendaFrameworkApp
                 if (userEntry.StartsWith(commandName))
                 {
                     string agendaCommand = ReplaceTextOnce(userEntry, commandName, string.Empty);
-                    AgendaValidCommands[commandName].ExecuteTask(agendaCommand);
+                    AgendaValidCommands[commandName].ExecuteTask(agendaCommand,null);
                     return;
                 }
             }

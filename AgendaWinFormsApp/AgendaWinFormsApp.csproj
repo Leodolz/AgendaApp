@@ -108,11 +108,5 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\AgendaFrameworkApp\AgendaFrameworkApp.csproj">
-      <Project>{421fed6d-098e-4add-bf7b-0122e9daab54}</Project>
-      <Name>AgendaFrameworkApp</Name>
-    </ProjectReference>
-  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

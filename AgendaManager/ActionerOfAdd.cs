@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AgendaManager
 {
-    class ActionerOfAdd:ITaskOrder
+    public class ActionerOfAdd:ITaskOrder
     {
 
         private Dictionary<string, ITaskOrder> validAddCommands;

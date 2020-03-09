@@ -1,4 +1,5 @@
 ﻿using System;
+using AgendaManager;
 
 namespace AgendaFrameworkApp
 {
@@ -9,11 +10,12 @@ namespace AgendaFrameworkApp
         {
             this.agendaController = agendaController;
         }
-        public void ExecuteTask(string idEntry)
+        public bool ExecuteTask(string idEntry, string[] commandOptions= null)
         {
             if (int.TryParse(idEntry, out int parsedId))
                 RemoveEntry(parsedId);
-            else Console.WriteLine("Comando invalido, por favor intente de nuevo");
+            else return false;
+            return true;
         }
         private void RemoveEntry(int entryID)
         {

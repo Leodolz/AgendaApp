@@ -1,5 +1,5 @@
 ﻿using System;
-
+using AgendaManager;
 namespace AgendaFrameworkApp
 {
     public class InterpreterOfAdd : ITaskOrder
@@ -14,7 +14,7 @@ namespace AgendaFrameworkApp
             this.agendaController = agendaController;
             this.splitChar = splitChar;
         }
-        public void ExecuteTask(string userEntry)
+        public void ExecuteTask(string userEntry, string )
         {
             int numberOfEntryValues = userEntry.Split(splitChar).Length;
             ITaskOrder agendaAddCommand = GetAddCommand(numberOfEntryValues, agendaController);
@@ -26,8 +26,6 @@ namespace AgendaFrameworkApp
         {
             switch (numberOfEntryValues)
             {
-                case ONE_ENTRY:
-                    return new AdderOneEntry(agendaClient);
                 case TWO_ENTRIES:
                     return new AdderTwoEntries(agendaClient,splitChar);
                 case THREE_ENTRIES:

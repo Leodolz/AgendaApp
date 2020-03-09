@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using AgendaFrameworkApp;
+using AgendaManager;
 
 namespace AgendaWinFormsApp
 {
@@ -20,7 +20,7 @@ namespace AgendaWinFormsApp
             TaskValidCommands =
                 new Dictionary<string, ITaskOrder>()
                 {
-                    {"ADD", new InterpreterOfAdd(agendaController,'|')},
+                    {"ADD", new ActionerOfAdd(agendaController)},
                     {"REMOVE", new ActionerOfRemove(agendaController)},
                     {"FILTER", new ActionerOfFilter(agendaController) }
                 };
@@ -37,7 +37,7 @@ namespace AgendaWinFormsApp
             string commandName = nameAndEntry[0];
             string userEntry = nameAndEntry[1];
             if (TaskValidCommands.ContainsKey(commandName))
-                TaskValidCommands[commandName].ExecuteTask(userEntry);
+                TaskValidCommands[commandName].ExecuteTask(commandEntry,null);
         }
     }
 }

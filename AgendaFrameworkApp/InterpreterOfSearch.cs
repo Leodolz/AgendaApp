@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Text;
+using AgendaManager;
 
 namespace AgendaFrameworkApp
 {
@@ -12,13 +13,14 @@ namespace AgendaFrameworkApp
         {
             this.agendaController = agendaController;
         }
-        public void ExecuteTask(string entryText)
+        public bool ExecuteTask(string entryText, string[] commandOptions =null)
         {
             ArrayList entriesToShow = FilterByText(entryText, agendaController.GetAgenda());
             foreach (AgendaEntry entry in entriesToShow)
             {
                 Console.WriteLine(AgendaTools.BuildEntryShowingMessage(entry));
             }
+            return true;
         }
         private ArrayList FilterByText(string filteringText, Dictionary<int, AgendaEntry> userAgenda)
         {
