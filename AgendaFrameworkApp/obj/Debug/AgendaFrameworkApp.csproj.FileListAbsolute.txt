@@ -1,0 +1,6 @@
+D:\Leandro\Training\C#Projects\AgendaApp\AgendaFrameworkApp\bin\Debug\AgendaFrameworkApp.exe.config
+D:\Leandro\Training\C#Projects\AgendaApp\AgendaFrameworkApp\bin\Debug\AgendaFrameworkApp.exe
+D:\Leandro\Training\C#Projects\AgendaApp\AgendaFrameworkApp\bin\Debug\AgendaFrameworkApp.pdb
+D:\Leandro\Training\C#Projects\AgendaApp\AgendaFrameworkApp\obj\Debug\AgendaFrameworkApp.csproj.CoreCompileInputs.cache
+D:\Leandro\Training\C#Projects\AgendaApp\AgendaFrameworkApp\obj\Debug\AgendaFrameworkApp.exe
+D:\Leandro\Training\C#Projects\AgendaApp\AgendaFrameworkApp\obj\Debug\AgendaFrameworkApp.pdb
