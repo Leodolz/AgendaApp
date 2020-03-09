@@ -8,36 +8,35 @@ namespace AgendaManager
 {
     public class ActionerOfAdd:ITaskOrder
     {
-
-        private Dictionary<string, ITaskOrder> validAddCommands;
+        private Dictionary<int, ITaskOrder> validAddCommands;
         readonly AgendaController agendaController;
         public ActionerOfAdd(AgendaController agendaController)
         {
             this.agendaController = agendaController;
-            validAddCommands = new Dictionary<string, ITaskOrder>()
+            validAddCommands = new Dictionary<int, ITaskOrder>()
             {
-                { "ADD",new AdderOneEntry(agendaController)}
+                { 1,new AdderOneEntry(agendaController)}
             };
         }
-        public bool ExecuteTask(string userEntry, string[] commandOptions)
+        public bool ExecuteTask(string nullable, string[] commandEntry)
         {
-            ITaskOrder agendaAddCommand = GetAddCommand(userEntry, agendaController);
+            ITaskOrder agendaAddCommand = GetAddCommand(commandEntry.Length, agendaController);
             if (agendaAddCommand != null)
             {
-                agendaAddCommand.ExecuteTask(userEntry, commandOptions);
+                agendaAddCommand.ExecuteTask(commandEntry[0], commandEntry);
             }
             else return false;
             return true;
         }
-        private ITaskOrder GetAddCommand(string commandName, AgendaController agendaClient)
+        private ITaskOrder GetAddCommand(int commandName, AgendaController agendaClient)
         {
             if (validAddCommands.ContainsKey(commandName))
                 return validAddCommands[commandName];
             else return null;
         }
-        private void AddValidCommand(Dictionary<string, ITaskOrder> newCommands)
+        private void AddValidCommand(Dictionary<int, ITaskOrder> newCommands)
         {
-            foreach(KeyValuePair<string,ITaskOrder> newCommand in newCommands)
+            foreach(KeyValuePair<int,ITaskOrder> newCommand in newCommands)
             {
                 validAddCommands.Add(newCommand.Key, newCommand.Value);
             }

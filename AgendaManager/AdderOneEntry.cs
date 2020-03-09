@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AgendaManager
 {
-    class AdderOneEntry : ITaskOrder
+    public class AdderOneEntry : ITaskOrder
     {
         AgendaController agendaController;
         public AdderOneEntry(AgendaController agendaController)
@@ -15,6 +15,7 @@ namespace AgendaManager
         }
         public bool ExecuteTask(string entryText,string[] commandOptions =null)
         {
+            Console.WriteLine("At executing add entry");
             return agendaController.AddEntry(entryText);
         }
     }

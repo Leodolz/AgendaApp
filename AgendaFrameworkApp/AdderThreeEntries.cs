@@ -1,24 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
+using AgendaManager;
 
 namespace AgendaFrameworkApp
 {
     class AdderThreeEntries : ITaskOrder
     {
         AgendaController agendaController;
-        char splitChar;
-        public AdderThreeEntries(AgendaController agendaController, char splitChar)
+        public AdderThreeEntries(AgendaController agendaController)
         {
             this.agendaController = agendaController;
-            this.splitChar = splitChar;
         }
-        public void ExecuteTask(string userEntry)
+        public bool ExecuteTask(string userEntry, string[] commandOptions)
         {
-            string[] controllerCommands = userEntry.Split(splitChar);
+            string[] controllerCommands = commandOptions;
             string entryText = controllerCommands[2]; string entryDate = controllerCommands[0]; string entryTime = controllerCommands[1];
             if (Validators.IsValidDate(entryDate) && Validators.IsValidTime(entryTime))
-                agendaController.AddEntry(entryText, entryDate, entryTime);
+                return agendaController.AddEntry(entryText, entryDate, entryTime);
+            else return false;
         }
     }
 }

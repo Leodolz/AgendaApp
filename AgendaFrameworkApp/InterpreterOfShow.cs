@@ -11,10 +11,17 @@ namespace AgendaFrameworkApp
             this.agendaController = agendaController;
         }
 
-
         public bool ExecuteTask(string showDate, string[] optionCommands)
         {
+            foreach (string optionCommand in optionCommands)
+            {
+                if(optionCommand!= null)
+                {
+                    showDate = optionCommand;
+                }
+            }
             showDate = AgendaTools.GetDateIfNecessary(showDate);
+            Console.WriteLine(showDate);
             if (Validators.IsValidDate(showDate.Trim()))
                 ShowEntries(showDate);
             else return false;

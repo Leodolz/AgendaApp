@@ -51,7 +51,6 @@
     <Compile Include="BaseUserInterpreter.cs" />
     <Compile Include="InterpreterOfAdd.cs" />
     <Compile Include="InterpreterOfEscape.cs" />
-    <Compile Include="ActionerOfRemove.cs" />
     <Compile Include="InterpreterOfSearch.cs" />
     <Compile Include="InterpreterOfShow.cs" />
     <Compile Include="Program.cs" />

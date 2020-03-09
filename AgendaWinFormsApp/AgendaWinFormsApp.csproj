@@ -50,7 +50,6 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ActionerOfFilter.cs" />
-    <Compile Include="ActionerOfRemove.cs" />
     <Compile Include="AgendaTableGenerator.cs" />
     <Compile Include="AppTaskManager.cs" />
     <Compile Include="DateFilterer.cs" />

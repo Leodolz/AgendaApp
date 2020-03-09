@@ -16,17 +16,14 @@ namespace AgendaManager
         public bool ExecuteTask(string idEntry, string[] commandOptions = null)
         {
             if (int.TryParse(idEntry, out int parsedId))
-            {
-                RemoveEntry(parsedId);
-                return true;
-            }
-            return false;
+                return RemoveEntry(parsedId);
+            else return false;
         }
-        private void RemoveEntry(int entryID)
+        private bool RemoveEntry(int entryID)
         {
             if (agendaController.GetAgenda().Remove(entryID))
-                Console.WriteLine("Entrada eliminada con exito");
-            else Console.WriteLine("No existe entrada con dicho ID");
+                return true;
+            else return false;
         }
     }
 }

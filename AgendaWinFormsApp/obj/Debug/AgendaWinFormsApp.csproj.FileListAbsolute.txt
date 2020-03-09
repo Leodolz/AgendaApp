@@ -10,7 +10,6 @@ D:\Leandro\Training\C#Projects\AgendaApp\AgendaWinFormsApp\bin\Debug\AgendaWinFo
 D:\Leandro\Training\C#Projects\AgendaApp\AgendaWinFormsApp\bin\Debug\AgendaWinFormsApp.pdb
 D:\Leandro\Training\C#Projects\AgendaApp\AgendaWinFormsApp\obj\Debug\AgendaWinFormsApp.exe
 D:\Leandro\Training\C#Projects\AgendaApp\AgendaWinFormsApp\obj\Debug\AgendaWinFormsApp.pdb
-D:\Leandro\Training\C#Projects\AgendaApp\AgendaWinFormsApp\bin\Debug\AgendaFrameworkApp.exe
-D:\Leandro\Training\C#Projects\AgendaApp\AgendaWinFormsApp\bin\Debug\AgendaFrameworkApp.pdb
-D:\Leandro\Training\C#Projects\AgendaApp\AgendaWinFormsApp\bin\Debug\AgendaFrameworkApp.exe.config
 D:\Leandro\Training\C#Projects\AgendaApp\AgendaWinFormsApp\obj\Debug\AgendaWinFormsApp.csproj.CopyComplete
+D:\Leandro\Training\C#Projects\AgendaApp\AgendaWinFormsApp\bin\Debug\AgendaManager.dll
+D:\Leandro\Training\C#Projects\AgendaApp\AgendaWinFormsApp\bin\Debug\AgendaManager.pdb

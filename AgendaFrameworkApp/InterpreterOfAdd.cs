@@ -1,5 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using AgendaManager;
+
 namespace AgendaFrameworkApp
 {
     public class InterpreterOfAdd : ITaskOrder
@@ -7,29 +12,29 @@ namespace AgendaFrameworkApp
         private const int ONE_ENTRY = 1;
         private const int TWO_ENTRIES = 2;
         private const int THREE_ENTRIES = 3;
-        private char splitChar;
         readonly AgendaController agendaController;
-        public InterpreterOfAdd(AgendaController agendaController, char splitChar)
+        public InterpreterOfAdd(AgendaController agendaController)
         {
             this.agendaController = agendaController;
-            this.splitChar = splitChar;
         }
-        public void ExecuteTask(string userEntry, string )
+        public bool ExecuteTask(string userEntry, string[] entryParameters)
         {
-            int numberOfEntryValues = userEntry.Split(splitChar).Length;
+            int numberOfEntryValues = entryParameters.Length;
             ITaskOrder agendaAddCommand = GetAddCommand(numberOfEntryValues, agendaController);
             if (agendaAddCommand != null)
-                agendaAddCommand.ExecuteTask(userEntry);
-            else Console.WriteLine("Formato invalido, vuelva a intentar");
+                 return agendaAddCommand.ExecuteTask(userEntry,entryParameters);
+            else return false;
         }
         private ITaskOrder GetAddCommand(int numberOfEntryValues, AgendaController agendaClient)
         {
             switch (numberOfEntryValues)
             {
+                case ONE_ENTRY:
+                    return new AdderOneEntry(agendaClient);
                 case TWO_ENTRIES:
-                    return new AdderTwoEntries(agendaClient,splitChar);
+                    return new AdderTwoEntries(agendaClient);
                 case THREE_ENTRIES:
-                    return new AdderThreeEntries(agendaClient,splitChar);
+                    return new AdderThreeEntries(agendaClient);
                 default:
                     return null;
             }
