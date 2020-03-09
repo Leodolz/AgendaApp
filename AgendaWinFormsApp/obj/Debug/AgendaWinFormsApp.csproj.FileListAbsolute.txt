@@ -1,0 +1,16 @@
+D:\Leandro\Training\C#Projects\AgendaApp\AgendaWinFormsApp\obj\Debug\AgendaWinFormsApp.csprojAssemblyReference.cache
+D:\Leandro\Training\C#Projects\AgendaApp\AgendaWinFormsApp\obj\Debug\AgendaWinFormsApp.FormAddEntry.resources
+D:\Leandro\Training\C#Projects\AgendaApp\AgendaWinFormsApp\obj\Debug\AgendaWinFormsApp.FormFilter.resources
+D:\Leandro\Training\C#Projects\AgendaApp\AgendaWinFormsApp\obj\Debug\AgendaWinFormsApp.FormHome.resources
+D:\Leandro\Training\C#Projects\AgendaApp\AgendaWinFormsApp\obj\Debug\AgendaWinFormsApp.Properties.Resources.resources
+D:\Leandro\Training\C#Projects\AgendaApp\AgendaWinFormsApp\obj\Debug\AgendaWinFormsApp.csproj.GenerateResource.cache
+D:\Leandro\Training\C#Projects\AgendaApp\AgendaWinFormsApp\obj\Debug\AgendaWinFormsApp.csproj.CoreCompileInputs.cache
+D:\Leandro\Training\C#Projects\AgendaApp\AgendaWinFormsApp\bin\Debug\AgendaWinFormsApp.exe.config
+D:\Leandro\Training\C#Projects\AgendaApp\AgendaWinFormsApp\bin\Debug\AgendaWinFormsApp.exe
+D:\Leandro\Training\C#Projects\AgendaApp\AgendaWinFormsApp\bin\Debug\AgendaWinFormsApp.pdb
+D:\Leandro\Training\C#Projects\AgendaApp\AgendaWinFormsApp\obj\Debug\AgendaWinFormsApp.exe
+D:\Leandro\Training\C#Projects\AgendaApp\AgendaWinFormsApp\obj\Debug\AgendaWinFormsApp.pdb
+D:\Leandro\Training\C#Projects\AgendaApp\AgendaWinFormsApp\bin\Debug\AgendaFrameworkApp.exe
+D:\Leandro\Training\C#Projects\AgendaApp\AgendaWinFormsApp\bin\Debug\AgendaFrameworkApp.pdb
+D:\Leandro\Training\C#Projects\AgendaApp\AgendaWinFormsApp\bin\Debug\AgendaFrameworkApp.exe.config
+D:\Leandro\Training\C#Projects\AgendaApp\AgendaWinFormsApp\obj\Debug\AgendaWinFormsApp.csproj.CopyComplete
