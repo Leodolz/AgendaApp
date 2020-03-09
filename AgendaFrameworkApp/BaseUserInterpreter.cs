@@ -4,7 +4,7 @@ using System.Text.RegularExpressions;
 
 namespace AgendaFrameworkApp
 {
-    class BaseUserInterpreter:IUserInterpreter
+    class BaseUserInterpreter:IUserClient
     {
         public static Dictionary<string, IUserOrder> AgendaValidCommands = new Dictionary<string,IUserOrder>();
         AgendaController agendaController = new AgendaController();

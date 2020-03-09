@@ -4,29 +4,29 @@ using System.Text;
 
 namespace AgendaFrameworkApp
 {
-    class UserInterpreterDecorator:IUserInterpreter
+    class UserInterpreterDecorator:IUserClient
     {
-        protected IUserInterpreter decoratedInterpreter;
+        protected IUserClient decoratedClient;
         protected AgendaController agendaController;
-        public UserInterpreterDecorator(IUserInterpreter decoratedInterpreter)
+        public UserInterpreterDecorator(IUserClient decoratedInterpreter)
         {
-            this.decoratedInterpreter = decoratedInterpreter;
+            this.decoratedClient = decoratedInterpreter;
             agendaController = GetAgendaController();
             AddUserValidCommand();
         }
 
         public void AddUserValidCommand(string commandName=null, IUserOrder executableCommand=null)
         {
-            decoratedInterpreter.AddUserValidCommand("SEARCH ", new InterpreterOfSearch(agendaController));
+            decoratedClient.AddUserValidCommand("SEARCH ", new InterpreterOfSearch(agendaController));
         }
         public AgendaController GetAgendaController()
         {
-            return decoratedInterpreter.GetAgendaController();
+            return decoratedClient.GetAgendaController();
         }
 
         public void ParseUserCommand(string userEntry)
         {
-            decoratedInterpreter.ParseUserCommand(userEntry);
+            decoratedClient.ParseUserCommand(userEntry);
         }
     }
 }

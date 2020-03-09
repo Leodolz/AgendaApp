@@ -10,7 +10,7 @@ namespace AgendaFrameworkApp
     {
         static void Main(string[] args)
         {
-            IUserInterpreter userInterpreter = new UserInterpreterDecorator(new BaseUserInterpreter());
+            IUserClient userInterpreter = new UserInterpreterDecorator(new BaseUserInterpreter());
             Console.WriteLine("Agenda App\nComandos:\n1. ADD\n2. SHOW\n3. REMOVE\n4. SEARCH\n5. EXIT");
             while (true)
             {

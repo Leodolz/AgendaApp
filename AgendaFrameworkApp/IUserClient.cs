@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AgendaFrameworkApp
 {
-    public interface IUserInterpreter
+    public interface IUserClient
     {
         void ParseUserCommand(string userEntry);
         void AddUserValidCommand(string commandName, IUserOrder executableCommand);
