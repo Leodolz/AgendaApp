@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AgendaFrameworkApp
 {
-    class CustomDateComparer : IComparer
+    public class CustomDateComparer : IComparer
     {
         public int Compare(object x, object y)
         {

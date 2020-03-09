@@ -14,9 +14,10 @@ namespace AgendaFrameworkApp
                 new Dictionary<string, ITaskOrder>()
                 {
                     {"EXIT", new InterpreterOfEscape()},
-                    {"ADD ", new InterpreterOfAdd(agendaController)},
+                    {"ADD ", new InterpreterOfAdd(agendaController,' ')},
                     {"SHOW", new InterpreterOfShow(agendaController)},
-                    {"REMOVE ", new InterpreterOfRemove(agendaController)}
+                    {"REMOVE ", new InterpreterOfRemove(agendaController)},
+                    {"SEARCH", new InterpreterOfSearch(agendaController) }
                 };
         }
         public void ExecuteCommand(string userEntry)
@@ -49,7 +50,7 @@ namespace AgendaFrameworkApp
                 commandNumber++;
             }
         }
-        public void AddValidcommand(string commandName, ITaskOrder executableCommand)
+        public void AddValidCommand(string commandName, ITaskOrder executableCommand)
         {
             AgendaValidCommands.Add(commandName, executableCommand);
         }

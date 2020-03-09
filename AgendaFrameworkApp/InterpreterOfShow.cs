@@ -2,7 +2,7 @@
 
 namespace AgendaFrameworkApp
 {
-    class InterpreterOfShow:IUserOrder
+    class InterpreterOfShow:ITaskOrder
     {
         AgendaController agendaController;
         public InterpreterOfShow(AgendaController agendaController)

@@ -3,12 +3,14 @@
 
 namespace AgendaFrameworkApp
 {
-    class AdderTwoEntries : IUserOrder
+    class AdderTwoEntries : ITaskOrder
     {
         AgendaController agendaController;
-        public AdderTwoEntries(AgendaController agendaController)
+        char splitChar;
+        public AdderTwoEntries(AgendaController agendaController, char splitChar)
         {
             this.agendaController = agendaController;
+            this.splitChar = splitChar;
         }
         public void ExecuteTask(string entryTextCommand)
         {

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace AgendaFrameworkApp
 {
-    class InterpreterOfSearch : IUserOrder
+    class InterpreterOfSearch : ITaskOrder
     {
         AgendaController agendaController;
         public InterpreterOfSearch(AgendaController agendaController)

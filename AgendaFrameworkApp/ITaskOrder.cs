@@ -1,7 +1,7 @@
 ﻿
 namespace AgendaFrameworkApp
 {
-    public interface IUserOrder
+    public interface ITaskOrder
     {
        void ExecuteTask( string entryText);
     }

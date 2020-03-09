@@ -2,7 +2,7 @@
 
 namespace AgendaFrameworkApp
 {
-    class InterpreterOfRemove:IUserOrder
+    public class InterpreterOfRemove:ITaskOrder
     {
         AgendaController agendaController;
         public InterpreterOfRemove(AgendaController agendaController)

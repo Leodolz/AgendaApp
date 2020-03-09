@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AgendaFrameworkApp
 {
-    class AdderOneEntry : IUserOrder
+    class AdderOneEntry : ITaskOrder
     {
         AgendaController agendaController;
         public AdderOneEntry(AgendaController agendaController)

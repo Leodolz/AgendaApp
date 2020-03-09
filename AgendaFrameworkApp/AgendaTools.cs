@@ -34,7 +34,7 @@ namespace AgendaFrameworkApp
                 return DateTime.Today.Date.ToString(CultureInfo.CurrentCulture.DateTimeFormat.ShortDatePattern);
             else return entryDate;
         }
-       
+        
 
     }
 }

@@ -2,7 +2,7 @@
 
 namespace AgendaFrameworkApp
 {
-    class InterpreterOfEscape : IUserOrder
+    class InterpreterOfEscape : ITaskOrder
     {
         public void ExecuteTask(string text= "")
         {

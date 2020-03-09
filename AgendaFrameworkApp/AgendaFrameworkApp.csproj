@@ -57,10 +57,10 @@
     <Compile Include="InterpreterOfSearch.cs" />
     <Compile Include="InterpreterOfShow.cs" />
     <Compile Include="IUserClient.cs" />
-    <Compile Include="IUserOrder.cs" />
+    <Compile Include="ITaskOrder.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserInterpreterDecorator.cs" />
+    <Compile Include="UserClientDecorator.cs" />
     <Compile Include="Validators.cs" />
   </ItemGroup>
   <ItemGroup>

@@ -4,20 +4,21 @@ using System.Text;
 
 namespace AgendaFrameworkApp
 {
-    class UserInterpreterDecorator:IUserClient
+    public class UserClientDecorator:IUserClient
     {
         protected IUserClient decoratedClient;
         protected AgendaController agendaController;
-        public UserInterpreterDecorator(IUserClient decoratedInterpreter)
+        public UserClientDecorator(IUserClient decoratedInterpreter)
         {
             this.decoratedClient = decoratedInterpreter;
             agendaController = GetAgendaController();
-            AddValidcommand();
+            AddValidCommand();
         }
 
-        public void AddValidcommand(string commandName=null, ITaskOrder executableCommand=null)
+        public void AddValidCommand(string commandName=null, ITaskOrder executableCommand=null)
         {
-            decoratedClient.AddValidcommand("SEARCH ", new InterpreterOfSearch(agendaController));
+            if(commandName !=null && executableCommand != null)
+                decoratedClient.AddValidCommand(commandName, executableCommand);
         }
         public AgendaController GetAgendaController()
         {

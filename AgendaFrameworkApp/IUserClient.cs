@@ -7,7 +7,7 @@ namespace AgendaFrameworkApp
     public interface IUserClient
     {
         void ExecuteCommand(string commandEntry);
-        void AddValidcommand(string commandName, ITaskOrder executableCommand);
+        void AddValidCommand(string commandName, ITaskOrder executableCommand);
         AgendaController GetAgendaController();
     }
 }
