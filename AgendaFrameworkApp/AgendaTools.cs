@@ -34,7 +34,15 @@ namespace AgendaFrameworkApp
                 return DateTime.Today.Date.ToString(CultureInfo.CurrentCulture.DateTimeFormat.ShortDatePattern);
             else return entryDate;
         }
-        
+        public static ArrayList GetAgendaValues(Dictionary<int, AgendaEntry> agenda)
+        {
+            ArrayList agendaValues = new ArrayList();
+            foreach (KeyValuePair<int, AgendaEntry> agendaEntry in agenda)
+            {
+                agendaValues.Add(agendaEntry.Value);
+            }
+            return agendaValues;
+        }
 
     }
 }
