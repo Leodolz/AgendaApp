@@ -53,7 +53,7 @@
     <Compile Include="CustomDateComparer.cs" />
     <Compile Include="InterpreterOfAdd.cs" />
     <Compile Include="InterpreterOfEscape.cs" />
-    <Compile Include="InterpreterOfRemove.cs" />
+    <Compile Include="ActionerOfRemove.cs" />
     <Compile Include="InterpreterOfSearch.cs" />
     <Compile Include="InterpreterOfShow.cs" />
     <Compile Include="IUserClient.cs" />

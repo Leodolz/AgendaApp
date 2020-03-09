@@ -10,11 +10,12 @@ namespace AgendaManager
     {
         private Dictionary<int, AgendaEntry> userAgenda = new Dictionary<int, AgendaEntry>();
         private static int entryID = 1;
-        public void AddEntry(string entryText, string entryDate = "", string entryTime = "")
+        public bool AddEntry(string entryText, string entryDate = "", string entryTime = "")
         {
             entryDate = AgendaTools.GetDateIfNecessary(entryDate);
             userAgenda.Add(entryID, new AgendaEntry(entryText, entryDate, entryTime, entryID));
             entryID++;
+            return true;
         }
         public int GetID()
         {

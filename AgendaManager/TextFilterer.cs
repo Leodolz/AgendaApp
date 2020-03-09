@@ -7,23 +7,42 @@ using System.Threading.Tasks;
 
 namespace AgendaManager
 {
-    public static class TextFilterer
+    class TextFilterer : IAgendaFilterer
     {
-        public static ArrayList FilterByText(string filteringText, Dictionary<int, AgendaEntry> userAgenda)
+        AgendaController agendaController;
+        public TextFilterer(AgendaController agendaController)
         {
-            ArrayList filteredEntryList = new ArrayList();
-            foreach (KeyValuePair<int, AgendaEntry> agendaEntry in userAgenda)
-            {
-                if (agendaEntry.Value.text.Contains(filteringText))
-                    filteredEntryList.Add(agendaEntry.Value);
-            }
-            return SortByDate(filteredEntryList);
-
+            this.agendaController = agendaController;
         }
-        private static ArrayList SortByDate(ArrayList entryList)
+        public Dictionary<int, AgendaEntry> GetFilteredAgenda(string filteringText)
+        {
+            return FilterByText(filteringText, agendaController.GetAgenda());
+        }
+        private Dictionary<int, AgendaEntry> FilterByText(string filteringText, Dictionary<int, AgendaEntry> userAgenda)
+        {
+            Dictionary<int, AgendaEntry> filteredAgenda =
+                userAgenda.Where(agendaItem => agendaItem.Value.text.Contains(filteringText))
+                .ToDictionary(agenda => agenda.Key, agenda => agenda.Value);
+            return GetSortedByDate(AgendaTools.GetAgendaValues(filteredAgenda));
+        }
+        private Dictionary<int, AgendaEntry> GetSortedByDate(ArrayList entryList)
         {
             entryList.Sort(new CustomDateComparer());
-            return entryList;
+            Dictionary<int, AgendaEntry> sortedAgenda = new Dictionary<int, AgendaEntry>();
+            foreach (AgendaEntry agendaEntry in entryList)
+            {
+                sortedAgenda.Add(agendaEntry.ID, agendaEntry);
+            }
+            return sortedAgenda;
         }
+        /*
+         Dictionary<int, AgendaEntry> filteredEntryList = new Dictionary<int, AgendaEntry>();
+         foreach (KeyValuePair<int, AgendaEntry> agendaEntry in userAgenda)
+            {
+                if (agendaEntry.Value.text.Contains(filteringText))
+                    filteredEntryList.Add(agendaEntry.Key,agendaEntry.Value);
+            }
+         */
+        //General Way
     }
 }

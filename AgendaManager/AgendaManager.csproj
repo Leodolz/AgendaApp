@@ -43,8 +43,11 @@
   <ItemGroup>
     <Compile Include="ActionerOfAdd.cs" />
     <Compile Include="ActionerOfRemove.cs" />
+    <Compile Include="AdderOneEntry.cs" />
     <Compile Include="AgendaController.cs" />
     <Compile Include="AgendaEntry.cs" />
+    <Compile Include="DateFilterer.cs" />
+    <Compile Include="IAgendaFilterer.cs" />
     <Compile Include="AgendaTools.cs" />
     <Compile Include="CustomDateComparer.cs" />
     <Compile Include="ITaskOrder.cs" />

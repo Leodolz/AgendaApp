@@ -16,7 +16,7 @@ namespace AgendaFrameworkApp
                     {"EXIT", new InterpreterOfEscape()},
                     {"ADD ", new InterpreterOfAdd(agendaController,' ')},
                     {"SHOW", new InterpreterOfShow(agendaController)},
-                    {"REMOVE ", new InterpreterOfRemove(agendaController)},
+                    {"REMOVE ", new ActionerOfRemove(agendaController)},
                     {"SEARCH", new InterpreterOfSearch(agendaController) }
                 };
         }

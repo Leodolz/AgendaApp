@@ -2,10 +2,10 @@
 
 namespace AgendaFrameworkApp
 {
-    public class InterpreterOfRemove:ITaskOrder
+    public class ActionerOfRemove:ITaskOrder
     {
         AgendaController agendaController;
-        public InterpreterOfRemove(AgendaController agendaController)
+        public ActionerOfRemove(AgendaController agendaController)
         {
             this.agendaController = agendaController;
         }
