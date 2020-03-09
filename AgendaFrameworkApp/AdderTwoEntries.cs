@@ -14,7 +14,7 @@ namespace AgendaFrameworkApp
         }
         public void ExecuteTask(string entryTextCommand)
         {
-            ValidateCommand(entryTextCommand.Split(' '));
+            ValidateCommand(entryTextCommand.Split(splitChar));
         }
         private void ValidateCommand(string[] entryAttributes)
         {
@@ -24,8 +24,6 @@ namespace AgendaFrameworkApp
                 agendaController.AddEntry(entryText, string.Empty, dateOrTime);
             else if (Validators.IsValidDate(dateOrTime))
                 agendaController.AddEntry(entryText, dateOrTime, string.Empty);
-            else
-                Console.WriteLine("Formato invalido, por favor intente de nuevo.");
         }
 
     }

@@ -12,7 +12,6 @@ namespace AgendaFrameworkApp
             entryDate = AgendaTools.GetDateIfNecessary(entryDate);
             userAgenda.Add(entryID,new AgendaEntry(entryText, entryDate, entryTime,entryID));
             entryID++;
-            Console.WriteLine("Texto ingresado correctamente");
         }
         public int GetID()
         {
