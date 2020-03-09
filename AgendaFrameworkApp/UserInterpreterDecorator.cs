@@ -12,21 +12,21 @@ namespace AgendaFrameworkApp
         {
             this.decoratedClient = decoratedInterpreter;
             agendaController = GetAgendaController();
-            AddUserValidCommand();
+            AddValidcommand();
         }
 
-        public void AddUserValidCommand(string commandName=null, IUserOrder executableCommand=null)
+        public void AddValidcommand(string commandName=null, ITaskOrder executableCommand=null)
         {
-            decoratedClient.AddUserValidCommand("SEARCH ", new InterpreterOfSearch(agendaController));
+            decoratedClient.AddValidcommand("SEARCH ", new InterpreterOfSearch(agendaController));
         }
         public AgendaController GetAgendaController()
         {
             return decoratedClient.GetAgendaController();
         }
 
-        public void ParseUserCommand(string userEntry)
+        public void ExecuteCommand(string userEntry)
         {
-            decoratedClient.ParseUserCommand(userEntry);
+            decoratedClient.ExecuteCommand(userEntry);
         }
     }
 }

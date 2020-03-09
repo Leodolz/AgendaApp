@@ -6,12 +6,12 @@ namespace AgendaFrameworkApp
 {
     class BaseUserInterpreter:IUserClient
     {
-        public static Dictionary<string, IUserOrder> AgendaValidCommands = new Dictionary<string,IUserOrder>();
+        public static Dictionary<string, ITaskOrder> AgendaValidCommands = new Dictionary<string,ITaskOrder>();
         AgendaController agendaController = new AgendaController();
         public BaseUserInterpreter()
         {
             AgendaValidCommands =
-                new Dictionary<string, IUserOrder>()
+                new Dictionary<string, ITaskOrder>()
                 {
                     {"EXIT", new InterpreterOfEscape()},
                     {"ADD ", new InterpreterOfAdd(agendaController)},
@@ -19,7 +19,7 @@ namespace AgendaFrameworkApp
                     {"REMOVE ", new InterpreterOfRemove(agendaController)}
                 };
         }
-        public void ParseUserCommand(string userEntry)
+        public void ExecuteCommand(string userEntry)
         {
            
             foreach(string commandName in AgendaValidCommands.Keys)
@@ -39,7 +39,7 @@ namespace AgendaFrameworkApp
             var regex = new Regex(Regex.Escape(oldCharSeq));
             return regex.Replace(textToModify, newCharSeq, 1);
         }
-        private void ThrowInvalidCommandError(Dictionary<string,IUserOrder> agendaValidCommands)
+        private void ThrowInvalidCommandError(Dictionary<string,ITaskOrder> agendaValidCommands)
         {
             Console.WriteLine("Error, porfavor inserte un comando valido\nCOMANDOS:");
             int commandNumber = 1;
@@ -49,7 +49,7 @@ namespace AgendaFrameworkApp
                 commandNumber++;
             }
         }
-        public void AddUserValidCommand(string commandName, IUserOrder executableCommand)
+        public void AddValidcommand(string commandName, ITaskOrder executableCommand)
         {
             AgendaValidCommands.Add(commandName, executableCommand);
         }
