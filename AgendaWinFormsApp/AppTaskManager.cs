@@ -10,7 +10,7 @@ namespace AgendaWinFormsApp
     public class AppTaskManager : IUserClient
     {
         public static Dictionary<string, ITaskOrder> TaskValidCommands = new Dictionary<string, ITaskOrder>();
-        AgendaController agendaController = new AgendaController();
+        readonly AgendaController agendaController = AgendaTools.CreateAgendaController();
         public void AddValidCommand(string taskCommandName, ITaskOrder executableCommand)
         {
             TaskValidCommands.Add(taskCommandName, executableCommand);
@@ -31,10 +31,9 @@ namespace AgendaWinFormsApp
             return agendaController;
         }
 
-        public void ExecuteCommand(string commandEntry)
+        public void ExecuteCommand(string commandName, string commandEntry)
         {
             string[] nameAndEntry = commandEntry.Split('~');
-            string commandName = nameAndEntry[0];
             string userEntry = nameAndEntry[1];
             if (TaskValidCommands.ContainsKey(commandName))
                 TaskValidCommands[commandName].ExecuteTask(commandEntry,null);

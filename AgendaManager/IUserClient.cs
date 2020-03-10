@@ -8,7 +8,7 @@ namespace AgendaManager
 {
     public interface IUserClient
     {
-        void ExecuteCommand(string commandEntry);
+        void ExecuteCommand(string commandName, string commandEntry);
         void AddValidCommand(string commandName, ITaskOrder executableCommand);
         AgendaController GetAgendaController();
     }

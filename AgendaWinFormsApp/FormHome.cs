@@ -37,7 +37,7 @@ namespace AgendaWinFormsApp
                 FormAddEntry formAdd = new FormAddEntry();
                 formAdd.ShowDialog();
             }
-            else appTaskManager.ExecuteCommand("ADD"+"~"+textEntryToAdd);
+            else appTaskManager.ExecuteCommand("ADD",textEntryToAdd);
             FormHome_Load(sender, e);
         }
 
@@ -55,7 +55,7 @@ namespace AgendaWinFormsApp
             }
             int selectedRowIndex = dataGridViewAgenda.SelectedCells[0].RowIndex;
             DataGridViewRow selectedRow = dataGridViewAgenda.Rows[selectedRowIndex];
-            appTaskManager.ExecuteCommand("REMOVE"+"~"+selectedRow.Cells["ID"].Value.ToString());
+            appTaskManager.ExecuteCommand("REMOVE",selectedRow.Cells["ID"].Value.ToString());
             FormHome_Load(sender, e);
         }
 
@@ -66,7 +66,7 @@ namespace AgendaWinFormsApp
             if (formFilter.returningFilterString.Equals(string.Empty))
                 return;
             ActionerOfFilter.FilteringCode = (int)comboBoxFilterOptions.SelectedValue;
-            appTaskManager.ExecuteCommand("FILTER"+"~"+formFilter.returningFilterString);
+            appTaskManager.ExecuteCommand("FILTER",formFilter.returningFilterString);
             FormHome_Load(sender, e);
             AgendaToDisplay = appTaskManager.GetAgendaController().GetAgenda();
         }

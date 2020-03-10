@@ -52,7 +52,6 @@
     <Compile Include="ActionerOfFilter.cs" />
     <Compile Include="AgendaTableGenerator.cs" />
     <Compile Include="AppTaskManager.cs" />
-    <Compile Include="DateFilterer.cs" />
     <Compile Include="FilteringOption.cs" />
     <Compile Include="FormAddEntry.cs">
       <SubType>Form</SubType>
@@ -72,10 +71,8 @@
     <Compile Include="FormHome.Designer.cs">
       <DependentUpon>FormHome.cs</DependentUpon>
     </Compile>
-    <Compile Include="IAgendaFilterer.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TextFilterer.cs" />
     <EmbeddedResource Include="FormAddEntry.resx">
       <DependentUpon>FormAddEntry.cs</DependentUpon>
     </EmbeddedResource>

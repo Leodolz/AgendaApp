@@ -39,7 +39,7 @@ namespace AgendaWinFormsApp
             if (dateTimePickerTime.Visible)
                 time = getTimeFormat(dateTimePickerTime.Value.TimeOfDay)+"|";
             string commandEntry = date + time + FormHome.textEntryToAdd;
-            FormHome.appTaskManager.ExecuteCommand("ADD"+"~"+commandEntry);
+            FormHome.appTaskManager.ExecuteCommand("ADD",commandEntry);
             Close();
 
         }

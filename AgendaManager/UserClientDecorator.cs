@@ -27,9 +27,9 @@ namespace AgendaManager
             return decoratedClient.GetAgendaController();
         }
 
-        public void ExecuteCommand(string userEntry)
+        public void ExecuteCommand(string commandName,string userEntry)
         {
-            decoratedClient.ExecuteCommand(userEntry);
+            decoratedClient.ExecuteCommand(commandName,userEntry);
         }
     }
 }
