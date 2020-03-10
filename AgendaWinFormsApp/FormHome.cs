@@ -37,7 +37,7 @@ namespace AgendaWinFormsApp
                 FormAddEntry formAdd = new FormAddEntry();
                 formAdd.ShowDialog();
             }
-            else appTaskManager.ExecuteCommand("ADD",textEntryToAdd);
+            else appTaskManager.ExecuteCommand("ADD",textEntryToAdd+"||");
             FormHome_Load(sender, e);
         }
 

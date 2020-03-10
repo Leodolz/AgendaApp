@@ -20,7 +20,7 @@ namespace AgendaWinFormsApp
             TaskValidCommands =
                 new Dictionary<string, ITaskOrder>()
                 {
-                    {"ADD", new ActionerOfAdd(agendaController)},
+                    {"ADD", new ActionerOfAdd(agendaController, GetCustomDictionary())},
                     {"REMOVE", new ActionerOfRemove(agendaController)},
                     {"FILTER", new ActionerOfFilter(agendaController) }
                 };
@@ -33,10 +33,15 @@ namespace AgendaWinFormsApp
 
         public void ExecuteCommand(string commandName, string commandEntry)
         {
-            string[] nameAndEntry = commandEntry.Split('~');
-            string userEntry = nameAndEntry[1];
             if (TaskValidCommands.ContainsKey(commandName))
-                TaskValidCommands[commandName].ExecuteTask(commandEntry,null);
+                TaskValidCommands[commandName].ExecuteTask(commandEntry,commandEntry.Split('|'));
+        }
+        private Dictionary<int,ITaskOrder> GetCustomDictionary()
+        {
+            return new Dictionary<int, ITaskOrder>()
+            {
+                { 3,new AdderOfEntries(agendaController) }
+            };
         }
     }
 }
