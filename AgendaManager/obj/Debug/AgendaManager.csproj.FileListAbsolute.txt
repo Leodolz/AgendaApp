@@ -1,6 +1,5 @@
 D:\Leandro\Training\C#Projects\AgendaApp\AgendaManager\bin\Debug\AgendaManager.dll
 D:\Leandro\Training\C#Projects\AgendaApp\AgendaManager\bin\Debug\AgendaManager.pdb
-D:\Leandro\Training\C#Projects\AgendaApp\AgendaManager\obj\Debug\AgendaManager.csprojAssemblyReference.cache
 D:\Leandro\Training\C#Projects\AgendaApp\AgendaManager\obj\Debug\AgendaManager.csproj.CoreCompileInputs.cache
 D:\Leandro\Training\C#Projects\AgendaApp\AgendaManager\obj\Debug\AgendaManager.dll
 D:\Leandro\Training\C#Projects\AgendaApp\AgendaManager\obj\Debug\AgendaManager.pdb

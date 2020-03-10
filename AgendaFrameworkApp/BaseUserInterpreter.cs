@@ -14,11 +14,12 @@ namespace AgendaFrameworkApp
                 new Dictionary<string, ITaskOrder>()
                 {
                     {"EXIT", new InterpreterOfEscape()},
-                    {"ADD ", new ActionerOfAdd(agendaController)},
+                    {"ADD ", new ActionerOfAdd(agendaController,GetCustomAddCommands())},
                     {"SHOW", new InterpreterOfShow(agendaController)},
                     {"REMOVE ", new ActionerOfRemove(agendaController)},
                     {"SEARCH ", new InterpreterOfSearch(agendaController) }
                 };
+           
         }
         public void ExecuteCommand(string userEntry)
         {
@@ -27,9 +28,11 @@ namespace AgendaFrameworkApp
                 if (userEntry.StartsWith(commandName))
                 {
                     string[] agendaCommands = ReplaceTextOnce(userEntry, commandName, string.Empty).Split(' ');
-                    Console.WriteLine(agendaCommands[0]);
                     if (AgendaValidCommands[commandName].ExecuteTask(agendaCommands[0], agendaCommands))
+                    {
+                        Console.WriteLine("Operation " + commandName.Trim() + " executed succesfully");
                         return;
+                    }
                 }
             }
             ThrowInvalidCommandError(AgendaValidCommands);

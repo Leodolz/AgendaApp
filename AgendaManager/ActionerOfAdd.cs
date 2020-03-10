@@ -13,12 +13,12 @@ namespace AgendaManager
         public ActionerOfAdd(AgendaController agendaController, Dictionary<int,ITaskOrder> customAddCommands = null)
         {
             this.agendaController = agendaController;
-            validAddCommands = new Dictionary<int, ITaskOrder>()
+            if (customAddCommands != null)
+                validAddCommands = customAddCommands;
+            else validAddCommands = new Dictionary<int, ITaskOrder>()
             {
                 { 1,new AdderOneEntry(agendaController)}
             };
-            if (customAddCommands != null)
-                validAddCommands = customAddCommands;
         }
         public bool ExecuteTask(string userEntry, string[] commandEntry)
         {
