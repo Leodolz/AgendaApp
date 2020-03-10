@@ -13,30 +13,15 @@ namespace AgendaFrameworkApp
         {
             this.agendaController = agendaController;
         }
-        public bool ExecuteTask(string entryText, string[] commandOptions =null)
+        public bool ExecuteTask(string entryText, string[] commandOptions = null)
         {
-            ArrayList entriesToShow = FilterByText(entryText, agendaController.GetAgenda());
-            foreach (AgendaEntry entry in entriesToShow)
+            TextFilterer textFilterer = new TextFilterer(agendaController);
+            Dictionary<int, AgendaEntry> filteredAgenda = textFilterer.GetFilteredAgenda(entryText);
+            foreach (KeyValuePair<int, AgendaEntry> filteredEntry in filteredAgenda)
             {
-                Console.WriteLine(AgendaTools.BuildEntryShowingMessage(entry));
+                Console.WriteLine(AgendaTools.BuildEntryShowingMessage(filteredEntry.Value));
             }
             return true;
-        }
-        private ArrayList FilterByText(string filteringText, Dictionary<int, AgendaEntry> userAgenda)
-        {
-            ArrayList filteredEntryList = new ArrayList();
-            foreach (KeyValuePair<int, AgendaEntry> agendaEntry in userAgenda)
-            {
-                if (agendaEntry.Value.text.Contains(filteringText))
-                    filteredEntryList.Add(agendaEntry.Value);
-            }
-            return SortByDate(filteredEntryList);
-
-        }
-        private ArrayList SortByDate(ArrayList entryList)
-        {
-            entryList.Sort(new CustomDateComparer());
-            return entryList;
         }
     }
 }

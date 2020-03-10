@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using AgendaManager;
 
 namespace AgendaFrameworkApp
@@ -12,26 +13,31 @@ namespace AgendaFrameworkApp
         }
         public bool ExecuteTask(string showDate, string[] optionCommands)
         {
-            foreach (string optionCommand in optionCommands)
-            {
-                if(optionCommand!= null)
-                {
-                    showDate = optionCommand;
-                }
-            }
+            showDate = GetShowDate(optionCommands);
+            DateFilterer dateFilterer = new DateFilterer(agendaController);
             showDate = AgendaTools.GetDateIfNecessary(showDate);
-            Console.WriteLine(showDate);
             if (Validators.IsValidDate(showDate.Trim()))
-                ShowEntries(showDate);
+                ShowEntries(dateFilterer.GetFilteredAgenda(showDate));
             else return false;
             return true;
         }
-        private void ShowEntries(string entryDate)
+        public static void ShowEntries(Dictionary<int,AgendaEntry> filteredAgenda)
         {
-            foreach (AgendaEntry entry in AgendaTools.FilterByDate(entryDate, agendaController.GetAgenda()))
+            foreach (KeyValuePair<int,AgendaEntry> agendaEntries in filteredAgenda)
             {
-                Console.WriteLine(AgendaTools.BuildEntryShowingMessage(entry));
+                Console.WriteLine(AgendaTools.BuildEntryShowingMessage(agendaEntries.Value));
             }
+        }
+        private string GetShowDate(string[] optionCommands)
+        {
+            foreach (string optionCommand in optionCommands)
+            {
+                if (optionCommand != null)
+                {
+                    return optionCommand;
+                }
+            }
+            return null;
         }
     }
 }

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AgendaManager
 {
-    interface IAgendaFilterer
+    public interface IAgendaFilterer
     {
         Dictionary<int, AgendaEntry> GetFilteredAgenda(string filteringOption);
     }

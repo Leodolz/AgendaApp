@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace AgendaManager
 {
-    class TextFilterer : IAgendaFilterer
+    public class TextFilterer : IAgendaFilterer
     {
         AgendaController agendaController;
         public TextFilterer(AgendaController agendaController)

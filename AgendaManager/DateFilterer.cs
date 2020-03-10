@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace AgendaManager
 {
-    class DateFilterer : IAgendaFilterer
+    public class DateFilterer : IAgendaFilterer
     {
         AgendaController agendaController;
         public DateFilterer(AgendaController agendaController)

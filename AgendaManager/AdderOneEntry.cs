@@ -15,7 +15,6 @@ namespace AgendaManager
         }
         public bool ExecuteTask(string entryText,string[] commandOptions =null)
         {
-            Console.WriteLine("At executing add entry");
             return agendaController.AddEntry(entryText);
         }
     }
