@@ -49,7 +49,6 @@
     <Compile Include="AdderThreeEntries.cs" />
     <Compile Include="AdderTwoEntries.cs" />
     <Compile Include="BaseUserInterpreter.cs" />
-    <Compile Include="InterpreterOfAdd.cs" />
     <Compile Include="InterpreterOfEscape.cs" />
     <Compile Include="InterpreterOfSearch.cs" />
     <Compile Include="InterpreterOfShow.cs" />

@@ -7,7 +7,7 @@ namespace AgendaFrameworkApp
     class BaseUserInterpreter:IUserClient
     {
         public static Dictionary<string, ITaskOrder> AgendaValidCommands = new Dictionary<string,ITaskOrder>();
-        AgendaController agendaController = AgendaTools.CreateAgendaController();
+        readonly AgendaController agendaController = AgendaTools.CreateAgendaController();
         public BaseUserInterpreter()
         {
             AgendaValidCommands =
@@ -21,16 +21,16 @@ namespace AgendaFrameworkApp
                 };
            
         }
-        public void ExecuteCommand(string userEntry)
+        public void ExecuteCommand(string commandName, string userEntry)
         {
-            foreach(string commandName in AgendaValidCommands.Keys)
+            foreach(string validCommandName in AgendaValidCommands.Keys)
             {
-                if (userEntry.StartsWith(commandName))
+                if (commandName.StartsWith(validCommandName.Trim()))
                 {
-                    string[] agendaCommands = ReplaceTextOnce(userEntry, commandName, string.Empty).Split(' ');
-                    if (AgendaValidCommands[commandName].ExecuteTask(agendaCommands[0], agendaCommands))
+                    string[] agendaCommands = ReplaceTextOnce(userEntry, validCommandName, string.Empty).Split(' ');
+                    if (AgendaValidCommands[validCommandName].ExecuteTask(agendaCommands[0], agendaCommands))
                     {
-                        Console.WriteLine("Operation " + commandName.Trim() + " executed succesfully");
+                        Console.WriteLine("Operation " + validCommandName.Trim() + " executed succesfully");
                         return;
                     }
                 }

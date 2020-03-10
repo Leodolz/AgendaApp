@@ -6,14 +6,15 @@ namespace AgendaFrameworkApp
 {
     class InterpreterOfShow:ITaskOrder
     {
-        AgendaController agendaController;
+        readonly AgendaController agendaController;
         public InterpreterOfShow(AgendaController agendaController)
         {
             this.agendaController = agendaController;
         }
         public bool ExecuteTask(string showDate, string[] optionCommands)
         {
-            showDate = GetShowDate(optionCommands);
+            if(showDate.Trim() == "")
+                showDate = GetShowDate(optionCommands);
             DateFilterer dateFilterer = new DateFilterer(agendaController);
             showDate = AgendaTools.GetDateIfNecessary(showDate);
             if (Validators.IsValidDate(showDate.Trim()))
@@ -32,12 +33,12 @@ namespace AgendaFrameworkApp
         {
             foreach (string optionCommand in optionCommands)
             {
-                if (optionCommand != null)
+                if (optionCommand != "")
                 {
                     return optionCommand;
                 }
             }
-            return null;
+            return "";
         }
     }
 }

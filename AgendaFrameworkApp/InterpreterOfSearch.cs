@@ -8,7 +8,7 @@ namespace AgendaFrameworkApp
 {
     class InterpreterOfSearch : ITaskOrder
     {
-        AgendaController agendaController;
+        readonly AgendaController agendaController;
         public InterpreterOfSearch(AgendaController agendaController)
         {
             this.agendaController = agendaController;

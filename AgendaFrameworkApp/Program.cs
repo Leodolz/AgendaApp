@@ -16,7 +16,7 @@ namespace AgendaFrameworkApp
             while (true)
             {
                 string userCommandEntry = Console.ReadLine();
-                userInterpreter.ExecuteCommand(userCommandEntry);
+                userInterpreter.ExecuteCommand(userCommandEntry.Split(' ')[0],userCommandEntry);
             }
         }
     }
